@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setupRecycler()
-        fetchUserGit()
+        fetchMovies()
     }
 
     private fun setupRecycler(){
@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun fetchUserGit(){
+    private fun fetchMovies(){
         repos.getMovies(object: ApiHandler<MovieResponse>(){
             override fun onRequestSuccess(data: MovieResponse?) {
                 movieAdapter.setDataList(data?.results!!)
